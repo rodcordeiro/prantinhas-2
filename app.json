@@ -6,8 +6,15 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#E0E0E0",
+      "resizeMode": "contain"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Permita que o Prantinhas use a câmera para registrar fotos das suas plantas."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -20,6 +27,23 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permita que o Prantinhas use a câmera para registrar fotos das suas plantas.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#2C8653",
+          "defaultChannel": "hydration-reminders"
+        }
+      ]
+    ]
   }
 }
